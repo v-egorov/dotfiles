@@ -22,9 +22,21 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+" Load colorschemes
+Plugin 'chriskempson/base16-vim'
+Plugin 'joshdick/onedark.vim'
+
+" tmux integration
+Plugin 'benmills/vimux'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
+
 filetype plugin indent on    " required
+
+" Yank to system clipboard
+" does not work? Check this out
+set clipboard=unnamed
 
 " To ignore plugin indent changes, instead use:
 "filetype plugin on
