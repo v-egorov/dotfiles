@@ -2,7 +2,8 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/vegorov/.oh-my-zsh"
+test -d /home/vegorov && export ZSH="/home/vegorov/.oh-my-zsh"
+test -d /Users/vegorov && export ZSH="/Users/vegorov/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
