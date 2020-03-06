@@ -1,5 +1,5 @@
 # dotfiles installation workflow
-## Install thoughtbot/rcm
+## Install [thoughtbot/rcm](https://github.com/thoughtbot/rcm)
 rcm can be installed under MacOS and Ubuntu via Homebrew:
 ```bash
 $ brew tap thoughtbot/formulae
