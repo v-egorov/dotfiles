@@ -7,6 +7,7 @@ set shell=/bin/bash
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 " alternatively, pass a path where Vundle should install plugins
 "call vundle#begin('~/some/path/here')
 
@@ -75,7 +76,7 @@ set listchars=tab:→\ ,eol:¬,trail:⋅,extends:❯,precedes:❮
 set showbreak=↪
 
 " Appearance
-set number "show line numbers
+set number " show line numbers
 set so=7 "set 7 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion
 
