@@ -67,6 +67,14 @@ HIST_STAMPS="yyyy-mm-dd"
 # Would you like to use another custom folder than $ZSH/custom?
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
+# Homewbrew auto-completion per docs @ https://docs.brew.sh/Shell-Completion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+  autoload -Uz compinit
+  compinit
+fi
+
 # Which plugins would you like to load?
 # Standard plugins can be found in ~/.oh-my-zsh/plugins/*
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -117,3 +125,10 @@ test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew
 
 # Add snaps to the PATH
 test -d /snap/bin && export PATH=/snap/bin:$PATH
+
+# Trellis CLI Virtualenv intergarion per https://github.com/roots/trellis-cli#virtualenv
+eval "$(trellis shell-init zsh)"
+
+# Added automatically via trellis --autocomplete-install - see https://github.com/roots/trellis-cli#autocompletes
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/0.9.0/bin/trellis trellis
