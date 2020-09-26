@@ -119,9 +119,13 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
-# Add brew to the PATH
+# Add brew to the PATH (Linux)
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+# Add brew to the PATH (Mac OS X)
+test -f /usr/local/bin/brew && eval $(/usr/local/bin/brew shellenv)
+
 
 # Add snaps to the PATH
 test -d /snap/bin && export PATH=/snap/bin:$PATH
@@ -132,3 +136,6 @@ eval "$(trellis shell-init zsh)"
 # Added automatically via trellis --autocomplete-install - see https://github.com/roots/trellis-cli#autocompletes
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/0.9.0/bin/trellis trellis
+
+# Add GOPATH (Mac OS X - go installed via homebrew)
+test -f /usr/local/bin/go && export PATH=$PATH:$(go env GOPATH)/bin
