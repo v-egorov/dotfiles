@@ -88,6 +88,7 @@ plugins=(
   wp-cli
   zsh-syntax-highlighting
   history-substring-search
+  docker
 )
 
 source $ZSH/oh-my-zsh.sh
