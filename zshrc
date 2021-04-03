@@ -120,6 +120,10 @@ export LANG=en_US.UTF-8
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
 
+# Point Vagrant to home_ext if it exists
+test -d /mnt/sda/home_ext/vegorov/.vagrant.d && export VAGRANT_HOME=/mnt/sda/home_ext/vegorov/.vagrant.d
+
+
 # Add brew to the PATH (Linux)
 test -d ~/.linuxbrew && eval $(~/.linuxbrew/bin/brew shellenv)
 test -d /home/linuxbrew/.linuxbrew && eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
@@ -140,3 +144,5 @@ complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/0.9.0/bin/t
 
 # Add GOPATH (Mac OS X - go installed via homebrew)
 test -f /usr/local/bin/go && export PATH=$PATH:$(go env GOPATH)/bin
+
+complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/0.9.1/bin/trellis trellis
