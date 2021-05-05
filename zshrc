@@ -144,7 +144,11 @@ eval "$(trellis shell-init zsh)"
 autoload -U +X bashcompinit && bashcompinit
 complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/0.9.0/bin/trellis trellis
 
-# Add GOPATH (Mac OS X - go installed via homebrew)
-test -f /usr/local/bin/go && export PATH=$PATH:$(go env GOPATH)/bin
+# Add GOPATH env variable
+if type go &>/dev/null; then
+  export GOPATH=$HOME/go
+  export PATH=$PATH:$(go env GOPATH)/bin
+fi
+
 
 complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/0.9.1/bin/trellis trellis
