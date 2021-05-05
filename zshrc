@@ -89,6 +89,7 @@ plugins=(
   zsh-syntax-highlighting
   history-substring-search
   docker
+  golang
 )
 
 source $ZSH/oh-my-zsh.sh
