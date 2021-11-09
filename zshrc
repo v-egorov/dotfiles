@@ -142,7 +142,7 @@ eval "$(trellis shell-init zsh)"
 
 # Added automatically via trellis --autocomplete-install - see https://github.com/roots/trellis-cli#autocompletes
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/0.9.0/bin/trellis trellis
+complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/1.0.0/bin/trellis trellis
 
 # Add GOPATH env variable
 if type go &>/dev/null; then
@@ -150,5 +150,19 @@ if type go &>/dev/null; then
   export PATH=$PATH:$(go env GOPATH)/bin
 fi
 
+# Add Red Hat CodeReady Containers (crc) to the PATH
+test -d /mnt/sda/OpenShift/bin && export PATH=/mnt/sda/OpenShift/bin:$PATH
 
-complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/0.9.1/bin/trellis trellis
+# Add Red Hat CodeReady Containers (crc) autocompletion
+if type crc &>/dev/null; then
+  crc completion zsh > "${fpath[1]}/_crc"
+fi
+
+# The next line updates PATH for Yandex Cloud CLI.
+# if [ -f '/home/vegorov/yandex-cloud/path.bash.inc' ]; then source '/home/vegorov/yandex-cloud/path.bash.inc'; fi
+if [ -f "$HOME/yandex-cloud/path.bash.inc" ]; then source "$HOME/yandex-cloud/path.bash.inc"; fi
+
+# The next line enables shell command completion for yc.
+# if [ -f '/home/vegorov/yandex-cloud/completion.zsh.inc' ]; then source '/home/vegorov/yandex-cloud/completion.zsh.inc'; fi
+if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-cloud/completion.zsh.inc"; fi
+

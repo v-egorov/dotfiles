@@ -23,6 +23,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'fatih/vim-go'
+
 " Load colorschemes
 Plugin 'chriskempson/base16-vim'
 Plugin 'joshdick/onedark.vim'
