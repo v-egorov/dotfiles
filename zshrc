@@ -166,3 +166,7 @@ if [ -f "$HOME/yandex-cloud/path.bash.inc" ]; then source "$HOME/yandex-cloud/pa
 # if [ -f '/home/vegorov/yandex-cloud/completion.zsh.inc' ]; then source '/home/vegorov/yandex-cloud/completion.zsh.inc'; fi
 if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-cloud/completion.zsh.inc"; fi
 
+# log4j CVE-2021-44228 mitigation
+export LOG4J_FORMAT_MSG_NO_LOOKUPS=true
+
+complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/1.5.1/bin/trellis trellis
