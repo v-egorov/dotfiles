@@ -10,7 +10,14 @@ test -d /Users/vegorov && export ZSH="/Users/vegorov/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+# ZSH_THEME="agnoster"
+ZSH_THEME="powerlevel10k/powerlevel10k"
+POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir dir_writable vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status kubecontext time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
+
 # ZSH_THEME="random"
 # ZSH_THEME="amuse"
 
@@ -86,7 +93,6 @@ plugins=(
   brew
   vagrant
   wp-cli
-  zsh-syntax-highlighting
   history-substring-search
   docker
   golang
@@ -138,7 +144,7 @@ test -f /usr/local/bin/brew && eval $(/usr/local/bin/brew shellenv)
 test -d /snap/bin && export PATH=/snap/bin:$PATH
 
 # Trellis CLI Virtualenv intergarion per https://github.com/roots/trellis-cli#virtualenv
-eval "$(trellis shell-init zsh)"
+test -f $(brew --prefix)/bin/trellis && eval "$(trellis shell-init zsh)"
 
 # Added automatically via trellis --autocomplete-install - see https://github.com/roots/trellis-cli#autocompletes
 autoload -U +X bashcompinit && bashcompinit
@@ -166,3 +172,7 @@ if [ -f "$HOME/yandex-cloud/path.bash.inc" ]; then source "$HOME/yandex-cloud/pa
 # if [ -f '/home/vegorov/yandex-cloud/completion.zsh.inc' ]; then source '/home/vegorov/yandex-cloud/completion.zsh.inc'; fi
 if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-cloud/completion.zsh.inc"; fi
 
+# log4j CVE-2021-44228 mitigation
+export LOG4J_FORMAT_MSG_NO_LOOKUPS=true
+
+complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/1.5.1/bin/trellis trellis
