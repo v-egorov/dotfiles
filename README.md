@@ -26,3 +26,15 @@ git commit
 git push
 ```
 Then update on other hosts via pulling updated repo and running ```rcup```
+
+## Powerlevel10k
+
+For zsh ```powerlevel10k``` - see https://github.com/romkatv/powerlevel10k
+
+Oh My Zsh specifically config - https://github.com/romkatv/powerlevel10k#oh-my-zsh :
+```
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+```
+After installing powerlevel10k - available ```p10k``` CLI utility.
+
+Fonts - https://github.com/romkatv/powerlevel10k#fonts
