@@ -80,6 +80,7 @@ set showbreak=↪
 
 " Appearance
 set number " show line numbers
+set nowrap " turn off word wrap
 set so=7 "set 7 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion
 
