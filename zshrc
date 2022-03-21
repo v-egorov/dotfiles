@@ -104,6 +104,7 @@ plugins=(
   docker
   golang
   kubectl
+  ssh-agent
 )
 
 source $ZSH/oh-my-zsh.sh
