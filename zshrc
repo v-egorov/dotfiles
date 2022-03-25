@@ -156,7 +156,12 @@ test -f $(brew --prefix)/bin/trellis && eval "$(trellis shell-init zsh)"
 
 # Added automatically via trellis --autocomplete-install - see https://github.com/roots/trellis-cli#autocompletes
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/1.0.0/bin/trellis trellis
+# test -f $(brew --prefix)/bin/trellis && eval "$(complete -o nospace -C /home/linuxbrew/.linuxbrew/bin/trellis trellis)"
+
+if [ -f $(brew --prefix)/bin/trellis ]; then
+  echo "Trellis exists"
+  complete -o nospace -C $(brew --prefix)/bin/trellis trellis
+fi
 
 # Add GOPATH env variable
 if type go &>/dev/null; then
@@ -182,8 +187,6 @@ if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-clo
 
 # log4j CVE-2021-44228 mitigation
 export LOG4J_FORMAT_MSG_NO_LOOKUPS=true
-
-complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/trellis-cli/1.5.1/bin/trellis trellis
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
