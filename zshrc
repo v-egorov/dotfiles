@@ -104,7 +104,12 @@ plugins=(
   docker
   golang
   kubectl
+  ssh-agent
 )
+
+# See ssh-agent docs at following URL:
+# https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/ssh-agent
+zstyle :omz:plugins:ssh-agent lazy yes
 
 source $ZSH/oh-my-zsh.sh
 
