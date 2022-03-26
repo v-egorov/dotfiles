@@ -159,7 +159,7 @@ autoload -U +X bashcompinit && bashcompinit
 # test -f $(brew --prefix)/bin/trellis && eval "$(complete -o nospace -C /home/linuxbrew/.linuxbrew/bin/trellis trellis)"
 
 if [ -f $(brew --prefix)/bin/trellis ]; then
-  echo "Trellis exists"
+  # echo "Trellis exists"
   complete -o nospace -C $(brew --prefix)/bin/trellis trellis
 fi
 
