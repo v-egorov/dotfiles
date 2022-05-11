@@ -194,3 +194,5 @@ export LOG4J_FORMAT_MSG_NO_LOOKUPS=true
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/terraform/1.1.7/bin/terraform terraform

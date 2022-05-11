@@ -29,8 +29,8 @@ Plugin 'fatih/vim-go'
 Plugin 'chriskempson/base16-vim'
 Plugin 'joshdick/onedark.vim'
 
-Plugin 'itchyny/lightline.vim'
-Plugin 'nicknisi/vim-base16-lightline'
+" Plugin 'itchyny/lightline.vim'
+" Plugin 'nicknisi/vim-base16-lightline'
 
 let g:lightline = {
             \   'colorscheme': 'base16',
@@ -93,6 +93,9 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 
 " tmux integration
 Plugin 'benmills/vimux'
+
+" terraform plugins
+Plugin 'hashivim/vim-terraform'
 
 " All of your Plugins must be added before the following line
 
