@@ -182,11 +182,9 @@ if type crc &>/dev/null; then
 fi
 
 # The next line updates PATH for Yandex Cloud CLI.
-# if [ -f '/home/vegorov/yandex-cloud/path.bash.inc' ]; then source '/home/vegorov/yandex-cloud/path.bash.inc'; fi
 if [ -f "$HOME/yandex-cloud/path.bash.inc" ]; then source "$HOME/yandex-cloud/path.bash.inc"; fi
 
 # The next line enables shell command completion for yc.
-# if [ -f '/home/vegorov/yandex-cloud/completion.zsh.inc' ]; then source '/home/vegorov/yandex-cloud/completion.zsh.inc'; fi
 if [ -f "$HOME/yandex-cloud/completion.zsh.inc" ]; then source "$HOME/yandex-cloud/completion.zsh.inc"; fi
 
 # log4j CVE-2021-44228 mitigation
@@ -195,4 +193,16 @@ export LOG4J_FORMAT_MSG_NO_LOOKUPS=true
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/terraform/1.1.7/bin/terraform terraform
+# Add Terraform autocompletion
+# if type terraform &>/dev/null; then
+#  complete -o nospace -C $(brew --prefix)/terraform terraform
+# fi
+
+
+#if [ -f $(brew --prefix)/bin/trellis ]; then
+  # echo "Trellis exists"
+#  complete -o nospace -C $(brew --prefix)/bin/trellis trellis
+#fi
+
+# The next line updates PATH for Yandex Cloud YDB CLI.
+if [ -f "$HOME/ydb/path.bash.inc" ]; then source "$HOME/ydb/path.bash.inc"; fi

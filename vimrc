@@ -127,3 +127,5 @@ endif
 " does not work? Check this out
 set clipboard=unnamed
 
+colorscheme elflord
+set hlsearch
