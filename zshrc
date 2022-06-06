@@ -193,12 +193,6 @@ export LOG4J_FORMAT_MSG_NO_LOOKUPS=true
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Add Terraform autocompletion
-# if type terraform &>/dev/null; then
-#  complete -o nospace -C $(brew --prefix)/terraform terraform
-# fi
-
-
 #if [ -f $(brew --prefix)/bin/trellis ]; then
   # echo "Trellis exists"
 #  complete -o nospace -C $(brew --prefix)/bin/trellis trellis
@@ -206,3 +200,15 @@ export LOG4J_FORMAT_MSG_NO_LOOKUPS=true
 
 # The next line updates PATH for Yandex Cloud YDB CLI.
 if [ -f "$HOME/ydb/path.bash.inc" ]; then source "$HOME/ydb/path.bash.inc"; fi
+
+# Terraform auto-completion. TODO - version hard-coded
+if type terraform &>/dev/null; then
+  complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/terraform/1.2.1/bin/terraform terraform
+fi
+
+# Add Terraform autocompletion - not working
+# if type terraform &>/dev/null; then
+#   complete -o nospace -C $(brew --prefix)/terraform terraform
+# fi
+
+
