@@ -203,7 +203,7 @@ if [ -f "$HOME/ydb/path.bash.inc" ]; then source "$HOME/ydb/path.bash.inc"; fi
 
 # Terraform auto-completion. TODO - version hard-coded
 if type terraform &>/dev/null; then
-  complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/terraform/1.2.1/bin/terraform terraform
+  complete -o nospace -C /home/linuxbrew/.linuxbrew/Cellar/terraform/1.2.6/bin/terraform terraform
 fi
 
 # Add Terraform autocompletion - not working

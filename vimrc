@@ -129,3 +129,4 @@ set clipboard=unnamed
 
 colorscheme elflord
 set hlsearch
+set wrap
