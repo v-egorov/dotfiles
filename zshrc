@@ -9,8 +9,9 @@ fi
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-test -d /home/vegorov && export ZSH="/home/vegorov/.oh-my-zsh"
-test -d /Users/vegorov && export ZSH="/Users/vegorov/.oh-my-zsh"
+# test -d /home/vegorov && export ZSH="/home/vegorov/.oh-my-zsh"
+# test -d /Users/vegorov && export ZSH="/Users/vegorov/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -211,5 +212,5 @@ fi
 #   complete -o nospace -C $(brew --prefix)/terraform terraform
 # fi
 
-# Fuzzy Finder
+# Fuzzy find
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
