@@ -129,4 +129,10 @@ set clipboard=unnamed
 
 colorscheme elflord
 set hlsearch
-set wrap
+
+syntax on
+
+" Treat Jenkunsfile as a Groovy script
+au BufNewFile,BufRead Jenkinsfile setf groovy
+
+set tabstop=4
