@@ -106,8 +106,10 @@ plugins=(
   golang
   kubectl
   ssh-agent
-  # zsh-autosuggestions
   zsh-syntax-highlighting
+  fzf
+  zsh-autosuggestions
+  fzf-tab
 )
 
 # See ssh-agent docs at following URL:
@@ -158,17 +160,19 @@ test -f /usr/local/bin/brew && eval $(/usr/local/bin/brew shellenv)
 # Add snaps to the PATH
 test -d /snap/bin && export PATH=/snap/bin:$PATH
 
-# Trellis CLI Virtualenv intergarion per https://github.com/roots/trellis-cli#virtualenv
-test -f $(brew --prefix)/bin/trellis && eval "$(trellis shell-init zsh)"
+if type brew &>/dev/null; then
+  # Trellis CLI Virtualenv intergarion per https://github.com/roots/trellis-cli#virtualenv
+  test -f $(brew --prefix)/bin/trellis && eval "$(trellis shell-init zsh)"
+
+  if [ -f $(brew --prefix)/bin/trellis ]; then
+    # echo "Trellis exists"
+    complete -o nospace -C $(brew --prefix)/bin/trellis trellis
+  fi
+fi
 
 # Added automatically via trellis --autocomplete-install - see https://github.com/roots/trellis-cli#autocompletes
 autoload -U +X bashcompinit && bashcompinit
 # test -f $(brew --prefix)/bin/trellis && eval "$(complete -o nospace -C /home/linuxbrew/.linuxbrew/bin/trellis trellis)"
-
-if [ -f $(brew --prefix)/bin/trellis ]; then
-  # echo "Trellis exists"
-  complete -o nospace -C $(brew --prefix)/bin/trellis trellis
-fi
 
 # Add GOPATH env variable
 if type go &>/dev/null; then
