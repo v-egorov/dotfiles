@@ -19,7 +19,7 @@ Plugin 'VundleVim/Vundle.vim'
 " plugin on GitHub repo
 Plugin 'tpope/vim-fugitive'
 
-Plugin 'scrooloose/nerdtree'
+Plugin 'preservim/nerdtree'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -27,7 +27,6 @@ Plugin 'fatih/vim-go'
 
 " Load colorschemes
 Plugin 'chriskempson/base16-vim'
-Plugin 'joshdick/onedark.vim'
 
 " Plugin 'itchyny/lightline.vim'
 " Plugin 'nicknisi/vim-base16-lightline'
@@ -80,8 +79,9 @@ set showbreak=↪
 
 " Appearance
 set number " show line numbers
+set relativenumber
 set nowrap " turn off word wrap
-set so=7 "set 7 lines to the cursors - when moving vertical
+set so=9 "set 9 lines to the cursors - when moving vertical
 set wildmenu " enhanced command line completion
 
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
@@ -129,10 +129,35 @@ set clipboard=unnamed
 
 colorscheme elflord
 set hlsearch
+set cursorline
+
+" Be sure to turn on both smartcase and ignorecase to enable expected behaviour - for example, as per
+" https://www.hillelwayne.com/post/intermediate-vim/
+set smartcase
+set ignorecase
+
+" Clear "screen clears search highlighting.
+nnoremap <C-L> :nohlsearch<CR><C-L>
+
+" Edit vimr configuration file
+nnoremap <Leader>ve :e $MYVIMRC<CR>
+
+" Reload vimr configuration file
+nnoremap <Leader>vr :source $MYVIMRC<CR>
+
+" New tab
+nnoremap <Leader>tn :tabnew<CR>
+
+" NERDTree shortcuts
+" https://github.com/preservim/nerdtree#how-can-i-map-a-specific-key-or-shortcut-to-open-nerdtree
+" nnoremap <leader>n :NERDTreeFocus<CR>
+" nnoremap <leader> :NERDTree<CR>
+nnoremap <leader>nt :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
 
 syntax on
 
 " Treat Jenkunsfile as a Groovy script
 au BufNewFile,BufRead Jenkinsfile setf groovy
 
-set tabstop=4
+set tabstop=2

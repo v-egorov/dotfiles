@@ -106,6 +106,8 @@ plugins=(
   golang
   kubectl
   ssh-agent
+  # zsh-autosuggestions
+  zsh-syntax-highlighting
 )
 
 # See ssh-agent docs at following URL:
@@ -121,12 +123,12 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
-# Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+# Preferred editor
+if type nvim &>/dev/null; then
+  export EDITOR='nvim'
+else
+  export EDITOR='vim'
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -172,6 +174,7 @@ fi
 if type go &>/dev/null; then
   export GOPATH=$HOME/go
   export PATH=$PATH:$(go env GOPATH)/bin
+  export GOPROXY=http://nexus.vegorov.ru/repository/go-proxy/
 fi
 
 # Add Red Hat CodeReady Containers (crc) to the PATH
@@ -214,3 +217,8 @@ fi
 
 # Fuzzy find
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Subsitute vim with nvim
+if type nvim &>/dev/null; then
+  alias vim='nvim'
+fi
