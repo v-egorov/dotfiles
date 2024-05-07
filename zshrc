@@ -129,7 +129,7 @@ export LANG=en_US.UTF-8
 # Installation path as per https://github.com/neovim/neovim/blob/master/INSTALL.md#linux instructions
 # for pre-built binaries for Linux - recommended path is /opt/nvim-linux64/bin/nvim
 if [ -f /opt/nvim-linux64/bin/nvim ]; then
-  export PATH=$PATH:/opt/nvim-linux64/bin/nvim
+  export PATH=$PATH:/opt/nvim-linux64/bin
 fi
 
 # Preferred editor
