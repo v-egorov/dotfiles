@@ -125,9 +125,18 @@ source $ZSH/oh-my-zsh.sh
 # You may need to manually set your language environment
 export LANG=en_US.UTF-8
 
+# Test for nvim presence and set search PATH if it is found
+# Installation path as per https://github.com/neovim/neovim/blob/master/INSTALL.md#linux instructions
+# for pre-built binaries for Linux - recommended path is /opt/nvim-linux64/bin/nvim
+if [ -f /opt/nvim-linux64/bin/nvim ]; then
+  export PATH=$PATH:/opt/nvim-linux64/bin/nvim
+fi
+
 # Preferred editor
 if type nvim &>/dev/null; then
   export EDITOR='nvim'
+  # Subsitute vim with nvim
+  alias vim='nvim'
 else
   export EDITOR='vim'
 fi
@@ -226,7 +235,3 @@ fi
 # Fuzzy find
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# Subsitute vim with nvim
-if type nvim &>/dev/null; then
-  alias vim='nvim'
-fi
