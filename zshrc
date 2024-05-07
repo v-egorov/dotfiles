@@ -174,6 +174,10 @@ fi
 autoload -U +X bashcompinit && bashcompinit
 # test -f $(brew --prefix)/bin/trellis && eval "$(complete -o nospace -C /home/linuxbrew/.linuxbrew/bin/trellis trellis)"
 
+if [ -f /usr/local/go/bin/go ]; then
+  export PATH=$PATH:/usr/local/go/bin
+fi
+
 # Add GOPATH env variable
 if type go &>/dev/null; then
   export GOPATH=$HOME/go
