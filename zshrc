@@ -169,6 +169,9 @@ test -f /usr/local/bin/brew && eval $(/usr/local/bin/brew shellenv)
 # Add snaps to the PATH
 test -d /snap/bin && export PATH=/snap/bin:$PATH
 
+# Add ~/.local/bin/ to the PATH if it exists
+test -d ~/.local/bin && export PATH=~/.local/bin:$PATH
+
 if type brew &>/dev/null; then
   # Trellis CLI Virtualenv intergarion per https://github.com/roots/trellis-cli#virtualenv
   test -f $(brew --prefix)/bin/trellis && eval "$(trellis shell-init zsh)"
