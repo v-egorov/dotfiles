@@ -238,3 +238,6 @@ fi
 # Fuzzy find
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# LazyVim - check for presence of lazyvim config, and if it exists -
+# set and export NVIM_APPNAME env variable
+test -d ~/.config/lazyvim && export NVIM_APPNAME=lazyvim
