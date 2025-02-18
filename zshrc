@@ -241,3 +241,12 @@ fi
 # LazyVim - check for presence of lazyvim config, and if it exists -
 # set and export NVIM_APPNAME env variable
 test -d ~/.config/lazyvim && export NVIM_APPNAME=lazyvim
+
+# Added by nvm installation script per 
+# https://github.com/nvm-sh/nvm?tab=readme-ov-file#install--update-script
+# Then run `nvm install lts/*` to install nvm-managed npm LTS version
+# npm, in turn, is required by mason NeoVim package manger for some LSP servers,
+# for example - bash and yaml
+[ -s "$HOME/.nvm" ] && export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
