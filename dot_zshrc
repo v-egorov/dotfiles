@@ -240,6 +240,7 @@ fi
 
 # LazyVim - check for presence of lazyvim config, and if it exists -
 # set and export NVIM_APPNAME env variable
+# For details, see https://lazyvim-ambitious-devs.phillips.codes/course/chapter-1/#_start_with_a_clean_slate
 test -d ~/.config/lazyvim && export NVIM_APPNAME=lazyvim
 
 # Added by nvm installation script per 
